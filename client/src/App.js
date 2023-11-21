@@ -9,8 +9,8 @@ function App() {
     <div className="container App">
       <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Homepage/>}/>
-        <Route path='generate' element={<QuestionPaper/>}/>
+        <Route path="/" element={<Homepage/>}></Route>
+        <Route path='/generate' element={<QuestionPaper/>}/>
         <Route path="/add" element={<QuestionAdd/>}/>
       </Routes>
       </BrowserRouter>
