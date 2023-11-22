@@ -30,7 +30,7 @@ const generatePaper = async (req, res) => {
     if (easyQuestion == -1 || mediumQuestion == -1 || hardQuestion == -1)
       return res.status(400).json({
         error:
-          "Please change the difficulty distribution because the following set of difficulty distributions is not available in the Question distribution store",
+          "No Paper Exist for following distributions",
       });
     let finalQuestionSet = easyQuestion.concat(mediumQuestion);
     finalQuestionSet = finalQuestionSet.concat(hardQuestion);
