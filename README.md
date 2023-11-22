@@ -2,7 +2,7 @@
 
 The given repository contains the implementation of a question paper generator that generates the question paper based on the total marks and the distribution of marks based on Difficulty.
 
-Project Link: https://reelo-question-paper.vercel.app/
+## Deployed Project Link: https://reelo-question-paper.vercel.app/
 
 ## Features
 
