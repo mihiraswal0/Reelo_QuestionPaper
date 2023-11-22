@@ -10,7 +10,7 @@ const QuestionAdd = () => {
   const addQuestion=async()=>{
     const marks=(difficulty==="easy"?1:(difficulty==="medium"?5:10));
     try{
-    const data=await fetch('http://localhost:5001/add',{
+    const data=await fetch('/add',{
       method: 'POST',
       headers:{'Content-Type': 'application/json'},
       body:JSON.stringify({question:question,subject:subject,topic:topic,difficulty:difficulty,marks:marks})
@@ -30,8 +30,8 @@ const QuestionAdd = () => {
   }
   const allQuestions=async()=>{
     try{
-    const data=await fetch('http://localhost:5001',{
-      method: 'POST',
+    const data=await fetch('/',{
+      method: 'GET',
       headers:{'Content-Type': 'application/json'},
     });
     const res=await data.json();

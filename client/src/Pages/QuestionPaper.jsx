@@ -7,10 +7,10 @@ const QuestionPaper = () => {
   const [hardM, setHardM] = useState(0);
   const [paper, setPaper] = useState([]);
   const marksSet = (event, type) => {
-    if (type == "easy") {
+    if (type === "easy") {
       setEasyM(event.target.value);
     }
-    else if (type == "medium") {
+    else if (type === "medium") {
       setMediumM(event.target.value);
     }
     else {
@@ -28,7 +28,7 @@ const QuestionPaper = () => {
      return alert("Please set medium marks multiple of 10 because the store consist of medium question of mark 10 only");
     }
     try{
-    const data = await fetch('http://localhost:5001/generate',
+    const data = await fetch('/generate',
       {method:"POST",
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ easyM: easyM, hardM: hardM, mediumM: mediumM, totalMarks: totalMarks })
