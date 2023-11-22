@@ -78,6 +78,11 @@ http:\\localhost:3000
 - It is assumed hard question hold 10 marks.
 - Make sure sum of distribution to equal to total marks.
 
+### Important backend files:
+- server/index : consist details about the api routes and to connect to database.
+- server/controller : Contains all logics of generating question , receving all question and adding question
+- server/questionStore : Its a schema defining the structure of a Question in database.
+
 ### Future Improvments:
 - Generating papers based on the topics or subjects.
 - Generating paper with variable question marks.
