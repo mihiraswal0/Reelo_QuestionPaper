@@ -22,19 +22,26 @@ The given repository contains the implementation of a question paper generator t
 
 ## Edge Cases Handled
 
-1.An alert stating "No Paper exist" will be generated if the required  distribution paper doesnt exist in the store.
-2.User will get error if the sum of distribution will not be equal to total Marks.
-3. Error will be displayed if user will enter any unwanted value.
-4. Duplicate question cannot be added.
-5. Errors if there is some missing fields.
+- An alert stating "No Paper exist" will be generated if the required  distribution paper doesnt exist in the store.
+- User will get error if the sum of distribution will not be equal to total Marks.
+- Error will be displayed if user will enter any unwanted value.
+- Duplicate question cannot be added.
+- Errors if there is some missing fields.
+
+### Technologies
+- Frontend: React Js
+- Backend: Node js,Express js
+- Database: Mongo Db
+### Prerequisites
+
+You need to have `Node.js` and `npm` installed on your machine.
 
 ## Installing
 
 1. Clone the repository.
 ```
-git clone 
+git clone https://github.com/mihiraswal0/Reelo_QuestionPaper.git
 ```
-
 2.Move to client directory
 ```
 cd client
@@ -63,7 +70,16 @@ npm start
 ```
 http:\\localhost:3000
 ```
-##
+### Assumptions
+- It is assumed easy question holds 1 marks.
+- It is assumed medium question hold 5 marks.
+- It is assumed hard question hold 10 marks.
+- Make sure sum of distribution to equal to total marks.
+
+### Future Improvments:
+- Generating papers based on the topics or subjects.
+- Generating paper with variable question marks.
+
 
 
 
