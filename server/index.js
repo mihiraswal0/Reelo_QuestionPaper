@@ -12,7 +12,7 @@ const {addPaper,generatePaper,allQuestion}=require('./controller.js');
 app.post('/generate',generatePaper);
 app.post('/add',addPaper);
 
-app.use('/',allQuestion);
+app.get('/',allQuestion);
 
 mongoose.connect(process.env.MONGO).then(()=>{
     app.listen(port,()=>{

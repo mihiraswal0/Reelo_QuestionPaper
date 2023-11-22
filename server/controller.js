@@ -1,4 +1,6 @@
 const QuestionStore = require("./questionStore.js");
+
+//to get all the questions
 const allQuestion = async (req, res) => {
   try{
   const data = await QuestionStore.find();
@@ -7,14 +9,17 @@ const allQuestion = async (req, res) => {
     res.status(500).json({error: err.message});
   }
 };
+
+//to generate paper based on marks and distribution
 const generatePaper = async (req, res) => {
   try {
     let { totalMarks, easyM, mediumM, hardM } = req.body;
     // console.log(req.body);
-
-    easyM = parseInt(easyM);
-    mediumM = parseInt(mediumM);
-    hardM = parseInt(hardM);
+    
+    if(isNaN(totalMarks) || isNaN(easyM) || isNaN(mediumM) || isNaN(hardM))
+    return res
+    .status(400)
+    .json({ error: "The entered details are not in valid format... Please add integer value" });
     if (!totalMarks)
       return res
         .status(400)
@@ -39,6 +44,8 @@ const generatePaper = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
+
+//to add a new paper
 const addPaper = async (req, res) => {
   try {
     const { question, subject, topic, difficulty, marks } = req.body;
@@ -54,6 +61,7 @@ const addPaper = async (req, res) => {
   }
 };
 
+//a function to get random question based on total marks and type of question
 let getQuestion = async (marks, type) => {
   const allQuestion = await QuestionStore.find({ difficulty: type });
   // console.log(allQuestion);
