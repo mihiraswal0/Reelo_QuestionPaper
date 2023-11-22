@@ -8,7 +8,7 @@ const QuestionAdd = () => {
   const [all,setAll]=useState([]);
 
   const addQuestion=async()=>{
-    const marks=(difficulty=="easy"?1:(difficulty=="medium"?5:10));
+    const marks=(difficulty==="easy"?1:(difficulty==="medium"?5:10));
     try{
     const data=await fetch('http://localhost:5001/add',{
       method: 'POST',
@@ -80,7 +80,7 @@ const QuestionAdd = () => {
       </div>
       <div className="row p-3">
         <div className='col'>
-        <Link to='/generate'>
+        <Link to='/'>
       <button className="btn btn-secondary" type="submit">Switch to Generate Question</button>
       </Link>
         </div>
