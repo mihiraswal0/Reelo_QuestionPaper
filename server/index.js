@@ -7,14 +7,12 @@ const app= express();
 app.use(cors());
 app.use(bodyParser.json());
 const port=process.env.PORT ||5001;
-const {addPaper,generatePaper}=require('./controller.js');
+const {addPaper,generatePaper,allQuestion}=require('./controller.js');
 
 app.post('/generate',generatePaper);
 app.post('/add',addPaper);
 
-app.use('/',(req,res)=>{
-    res.send("Apii Running");
-})
+app.use('/',allQuestion);
 
 mongoose.connect(process.env.MONGO).then(()=>{
     app.listen(port,()=>{

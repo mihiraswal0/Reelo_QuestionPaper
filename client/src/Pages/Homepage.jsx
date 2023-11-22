@@ -3,25 +3,24 @@ import { Link } from 'react-router-dom'
 
 const Homepage = () => {
     return (
-        <div className="container-fluid">
-            <div className='row'>
-                <div className="col justifiy-content-center">
+        <div className="container-fluid border border-dark p-5">
+            <div className='row '>
+                <div className="col justifiy-content-center m-5 border border-dark">
                     <h1>Question Paper Generator Tool</h1>
                 </div>
             </div>
             <div className='row d-flex flex-column justify-content-start'>
-                <div className='col '>
+                <div className='col'>
+                    <h2>Directions</h2>
                     <ul >
-                        <li >Directions</li>
-                        <li>Click Generate Question button to create paper</li>
-                        <li>Click Add Question button to add question</li>
-
+                        <li className='p-2 fs-5'>Click Generate Question button to create paper</li>
+                        <li className='p-2 fs-5'>Click Add Question button to add question</li>
+                        <li className='p-2 fs-5'>Assume: Easy Question hold 1 Marks.</li>
+                        <li className='p-2 fs-5'>Assume: Medium Question hold 5 Marks.</li>
+                        <li className='p-2 fs-5'>Assume: Hard Question hold 10 Marks</li>
                     </ul>
                 </div>
-                <div className='col'>
-                    <h5>Assumptions: It is assumed that the 'Easy' question hold 1 mark, 'Medium' question hold 5 mark and 'Hard' question hold 10 mark</h5>
-                </div>
-
+             
             </div>
             <div className='row'>
                 <div className='col'>
