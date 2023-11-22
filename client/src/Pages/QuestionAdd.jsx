@@ -9,6 +9,7 @@ const QuestionAdd = () => {
 
   const addQuestion=async()=>{
     const marks=(difficulty=="easy"?1:(difficulty=="medium"?5:10));
+    try{
     const data=await fetch('http://localhost:5001/add',{
       method: 'POST',
       headers:{'Content-Type': 'application/json'},
@@ -22,14 +23,23 @@ const QuestionAdd = () => {
     setSubject("");
     setTopic("");
     setDifficulty("");
+  }catch(err)
+  {
+    alert("Error :"+err.message)
+  }
   }
   const allQuestions=async()=>{
+    try{
     const data=await fetch('http://localhost:5001',{
       method: 'POST',
       headers:{'Content-Type': 'application/json'},
     });
     const res=await data.json();
     setAll(res);
+  }catch(err)
+  {
+    alert("Error:"+err.message);
+  }
   }
   return (
     <div className='container'>
@@ -72,7 +82,6 @@ const QuestionAdd = () => {
         <div className='col'>
         <Link to='/generate'>
       <button className="btn btn-secondary" type="submit">Switch to Generate Question</button>
-
       </Link>
         </div>
         <div className="col">

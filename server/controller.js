@@ -1,7 +1,11 @@
 const QuestionStore = require("./questionStore.js");
 const allQuestion = async (req, res) => {
+  try{
   const data = await QuestionStore.find();
   res.status(200).json( data );
+  }catch(err){
+    res.status(500).json({error: err.message});
+  }
 };
 const generatePaper = async (req, res) => {
   try {

@@ -27,6 +27,7 @@ const QuestionPaper = () => {
     if (hardM % 10) {
      return alert("Please set medium marks multiple of 10 because the store consist of medium question of mark 10 only");
     }
+    try{
     const data = await fetch('http://localhost:5001/generate',
       {method:"POST",
         headers: { 'Content-Type': 'application/json' },
@@ -36,6 +37,10 @@ const QuestionPaper = () => {
       if(res.error)
       return alert("Error: "+res.error);
     setPaper(res);
+    }
+    catch(err){
+      alert("Error:"+err.message);
+    }
 
   }
 
@@ -45,7 +50,7 @@ const QuestionPaper = () => {
       <div className='row '>
         <div className='col p-2 col-md-2'>
         <Link to='/add'>
-      <button class="btn btn-secondary" type="submit">Switch to Add Question</button>
+      <button className="btn btn-secondary" type="submit">Switch to Add Question</button>
       </Link>
         </div>
         <div className="col p-1 col-md-10">

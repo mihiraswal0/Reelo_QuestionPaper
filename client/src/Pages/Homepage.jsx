@@ -24,12 +24,12 @@ const Homepage = () => {
             </div>
             <div className='row'>
                 <div className='col'>
-                    <Link to="/generate"><button type="button" class="btn btn-primary btn-lg">Generate Question Paper</button>
+                    <Link to="/generate"><button type="button" className="btn btn-primary btn-lg">Generate Question Paper</button>
                     </Link>
                 </div>
                 <div className='col'>
                     <Link to="/add">
-                        <button type="button" class="btn btn-primary btn-lg">Add Question to the Store</button>
+                        <button type="button" className="btn btn-primary btn-lg">Add Question to the Store</button>
 
                     </Link>
                 </div>
