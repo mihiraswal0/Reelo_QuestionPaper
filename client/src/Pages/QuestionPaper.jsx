@@ -28,7 +28,7 @@ const QuestionPaper = () => {
      return alert("Please set medium marks multiple of 10 because the store consist of medium question of mark 10 only");
     }
     try{
-    const data = await fetch('/generate',
+    const data = await fetch('https://question-paper-api-8t32.onrender.com/generate',
       {method:"POST",
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ easyM: easyM, hardM: hardM, mediumM: mediumM, totalMarks: totalMarks })
