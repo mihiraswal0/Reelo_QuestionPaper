@@ -14,12 +14,17 @@ const allQuestion = async (req, res) => {
 const generatePaper = async (req, res) => {
   try {
     let { totalMarks, easyM, mediumM, hardM } = req.body;
-    // console.log(req.body);
+    console.log(req.body);
     
     if(isNaN(totalMarks) || isNaN(easyM) || isNaN(mediumM) || isNaN(hardM))
     return res
     .status(400)
     .json({ error: "The entered details are not in valid format... Please add integer value" });
+    totalMarks = parseInt(totalMarks);
+    easyM = parseInt(easyM);
+    mediumM = parseInt(mediumM);
+    hardM = parseInt(hardM);
+    console.log(easyM+ mediumM+hardM);
     if (!totalMarks)
       return res
         .status(400)

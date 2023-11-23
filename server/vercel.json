@@ -6,11 +6,11 @@
     
         "routes": [
           { "src": "/.*", "dest": "/" }
-        ],
+        ]
         
-          "git": {
-            "deploymentEnabled": false
-          }
+          // "git": {
+          //   "deploymentEnabled": false
+          // }
         
         
       
