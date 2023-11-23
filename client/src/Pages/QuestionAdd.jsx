@@ -10,19 +10,17 @@ const QuestionAdd = () => {
   const addQuestion=async()=>{
     const marks=(difficulty==="easy"?1:(difficulty==="medium"?5:10));
     try{
-    const data=await fetch('https://reelo-question-paper-s1vb.vercel.app/add',{
+    const data=await fetch('http://localhost:5001/add',{
       method: 'POST',
       headers:{'Content-Type': 'application/json'},
       body:JSON.stringify({question:question,subject:subject,topic:topic,difficulty:difficulty,marks:marks})
     })
     const res=await data.json();
     if(res.error)
-    return alert("Error: " + res.error)
+   alert("Error: " + res.error)
+  else
     alert("Question is Added");
-    setQuestion("");
-    setSubject("");
-    setTopic("");
-    setDifficulty("");
+    window.location.reload(false);
   }catch(err)
   {
     alert("Error :"+err.message)
@@ -30,7 +28,7 @@ const QuestionAdd = () => {
   }
   const allQuestions=async()=>{
     try{
-    const data=await fetch('https://reelo-question-paper-s1vb.vercel.app/',{
+    const data=await fetch('http://localhost:5001/',{
       method: 'GET',
       headers:{'Content-Type': 'application/json'},
     });
@@ -63,15 +61,15 @@ const QuestionAdd = () => {
       </div>
       <div className="row p-3 fs-4">
       <div className="col">
-        <input type="radio" name='diff' value="easy" onClick={e=>setDifficulty(e.target.value)}></input>
+        <input type="radio" name='diff'  value="easy" onClick={e=>setDifficulty(e.target.value)}></input>
         <label>Easy</label>
       </div>
       <div className="col">
-        <input type="radio" name='diff' value="medium" onClick={e=>setDifficulty(e.target.value)}></input>
+        <input type="radio" name='diff'  value="medium" onClick={e=>setDifficulty(e.target.value)}></input>
         <label>Medium</label>
       </div>
       <div className="col">
-        <input type="radio" name='diff' value="hard" onClick={e=>setDifficulty(e.target.value)}></input>
+        <input type="radio" name='diff'   value="hard" onClick={e=>setDifficulty(e.target.value)}></input>
         <label>Hard</label>
       </div>
       </div>
