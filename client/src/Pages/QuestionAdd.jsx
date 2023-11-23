@@ -10,7 +10,7 @@ const QuestionAdd = () => {
   const addQuestion=async()=>{
     const marks=(difficulty==="easy"?1:(difficulty==="medium"?5:10));
     try{
-    const data=await fetch('https://question-paper-api-8t32.onrender.com/add',{
+    const data=await fetch('https://reelo-question-paper-s1vb.vercel.app/add',{
       method: 'POST',
       headers:{'Content-Type': 'application/json'},
       body:JSON.stringify({question:question,subject:subject,topic:topic,difficulty:difficulty,marks:marks})
@@ -30,7 +30,7 @@ const QuestionAdd = () => {
   }
   const allQuestions=async()=>{
     try{
-    const data=await fetch('https://question-paper-api-8t32.onrender.com/',{
+    const data=await fetch('https://reelo-question-paper-s1vb.vercel.app/',{
       method: 'GET',
       headers:{'Content-Type': 'application/json'},
     });
